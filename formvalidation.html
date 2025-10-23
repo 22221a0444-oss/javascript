@@ -1,0 +1,237 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>form validation example</h2>
+    <form onsubmit="return validationform()">
+    <label> username:</label>
+    <input type="text"id='username'placeholder='enter usename'>
+    <input type="text"id='email'placeholder='enter email'>
+    <input type="text"id='password'placeholder='enter password'>
+    <p id="errormessage"></p>
+    <button type="submit">submit</button>
+    </form>
+</body>
+<script>
+    function validationform(){
+        let username=document.getElementById('username').value.trim();
+        let email=document.getElementById('email').value.trim();
+        let password=document.getElementById('password').value.trim();
+        let errormessage=document.getElementById('errormessage');
+        errormessage.innerText='';
+        const lowercase=/[a-z]/;
+        const uppercase=/[A-Z]/;
+        const numbers=/[0-9]/;
+        const specialChars=/[!@#$%^&;:.,*(){}|<>]/;
+
+        if( username===''|| email===''|| password===''){
+            errormessage.innerText='All fields are required';
+            return false;
+        }
+        let emailpattern= /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        if(!email.match(emailpattern)){
+            errormessage.innerText = 'please enter a valid email';
+            return false;
+        }
+        if(password.length<8){
+            errormessage.innerText='Password must be at least 8 characters';
+            return false;
+        }
+        if(!lowercase.test(password)) {
+            errormessage.innerText='password contain atleast one lowercase letter';
+            return false;
+        }
+        if(!uppercase.test(password)) {
+            errormessage.innerText='password contain atleast one uppercase letter';
+            return false;
+        }
+        if(!numbers.test(password)) {
+            errormessage.innerText='password contain atleast one number';
+            return false;
+        }
+        if(!specialChars.test(password)) {
+            errormessage.innerText='password contain atleast one special character';
+            return false;
+        }
+        alert('Form submitted successfully');
+        return true;
+
+    }
+</script>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation Example</title>
+</head>
+<body>
+    <h2>Form Validation Example</h2>
+    <form onsubmit="return validationform()">
+        <label>Username:</label><br>
+        <input type="text" id="username" placeholder="Enter username"><br><br>
+        
+        <label>Email:</label><br>
+        <input type="text" id="email" placeholder="Enter email"><br><br>
+        
+        <label>Password:</label><br>
+        <input type="password" id="password" placeholder="Enter password"><br><br>
+        
+        <p id="errormessage" style="color:red;"></p>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function validationform() {
+            let username = document.getElementById('username').value.trim();
+            let email = document.getElementById('email').value.trim();
+            let password = document.getElementById('password').value.trim();
+            let errormessage = document.getElementById('errormessage');
+
+            errormessage.innerText = '';
+        const lowercase=/[a-z]/;
+        const uppercase=/[A-Z]/;
+        const numbers=/[0-9]/;
+        const specialChars=/[!@#$%^&;:.,*(){}|<>]/;
+        }
+        
+        localStorage.setItem("username", username);
+        localStorage.setItem("email", email);
+        localStorage.setItem("password", password);
+
+
+
+
+            if (username === '' || email === '' || password === '') {
+                errormessage.innerText = 'All fields are required';
+                return false;
+            }
+            let emailpattern = /^22221A0[A-Za-z0-9._%+-]*@[A-Za-z0-9.-]+\.[A-Za-z]{2,3}$/;
+
+            if (!email.match(emailpattern)) {
+                errormessage.innerText = 'Email must start with 22221A0 and be valid';
+                return false;
+            }
+
+            if (password.length < 8) {
+                errormessage.innerText = 'Password must be at least 8characters';
+                return false;
+            }if(!lowercase.test(password)) {
+            errormessage.innerText='password contain atleast one lowercase letter';
+            return false;
+        }
+        if(!uppercase.test(password)) {
+            errormessage.innerText='password contain atleast one uppercase letter';
+            return false;
+        }
+        if(!numbers.test(password)) {
+            errormessage.innerText='password contain atleast one number';
+            return false;
+        }
+        if(!specialChars.test(password)) {
+            errormessage.innerText='password contain atleast one special character';
+            return false;
+
+
+            alert('Form submitted successfully!');
+            return true;
+        }
+    </script>
+</body>
+</html> -->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation Example</title>
+</head>
+<body>
+    <h2>Form Validation Example</h2>
+    <form onsubmit="return validationform()">
+        <label>Username:</label><br>
+        <input type="text" id="username" placeholder="Enter username"><br><br>
+        
+        <label>Email:</label><br>
+        <input type="text" id="email" placeholder="Enter email"><br><br>
+        
+        <label>Password:</label><br>
+        <input type="password" id="password" placeholder="Enter password"><br><br>
+        
+        <p id="errormessage" style="color:red;"></p>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function validationform() {
+            let username = document.getElementById('username').value.trim();
+            let email = document.getElementById('email').value.trim();
+            let password = document.getElementById('password').value.trim();
+            let errormessage = document.getElementById('errormessage');
+
+            errormessage.innerText = '';
+
+            // Check empty fields
+            if (username === '' || email === '' || password === '') {
+                errormessage.innerText = 'All fields are required';
+                return false;
+            }
+
+            // Email validation
+            let emailpattern = /^22221A0[A-Za-z0-9._%+-]*@bvcgroup.in/;
+            if (!email.match(emailpattern)) {
+                errormessage.innerText = 'Email must start with 22221A0 and be valid';
+                return false;
+            }
+
+            // Password validation patterns
+            let lowercase = /[a-z]/;
+            let uppercase = /[A-Z]/;
+            let numbers = /[0-9]/;
+            let specialChars = /[!@#$%^&*(),.?":{}|<>]/;
+
+            if (password.length < 8) {
+                errormessage.innerText = 'Password must be at least 8 characters';
+                return false;
+            }
+            if (!lowercase.test(password)) {
+                errormessage.innerText = 'Password must contain at least one lowercase letter';
+                return false;
+            }
+            if (!uppercase.test(password)) {
+                errormessage.innerText = 'Password must contain at least one uppercase letter';
+                return false;
+            }
+            if (!numbers.test(password)) {
+                errormessage.innerText = 'Password must contain at least one number';
+                return false;
+            }
+            if (!specialChars.test(password)) {
+                errormessage.innerText = 'Password must contain at least one special character';
+                return false;
+            }
+
+            
+            localStorage.setItem("username", username);
+            localStorage.setItem("email", email);
+            localStorage.setItem("password", password);
+
+            alert('Form submitted successfully!');
+            return true;
+        }
+    </script>
+</body>
+</html>

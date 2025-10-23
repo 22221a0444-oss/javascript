@@ -1,0 +1,64 @@
+<!-- Document object model - it manuplates the code that is directly changing the code  -->
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Register Example</title>
+</head>
+<body>
+    <input type="text" id="username" placeholder="Enter username">
+    <input type="text" id="password" placeholder="Enter password">
+    <button type="button" id="registerbtn">Register</button>
+    <button type="button" id="loginbtn">Login</button>
+
+    <div id="resetSection" style="display:none;margin-top:10px">
+    <input type="password" id="newpassword" placeholder="Enter new password">
+    <button type="button" id="resetbtn">Reset Password</button></div>
+
+
+    <script>
+        const myusername = document.getElementById('username');
+        const mypassword = document.getElementById('password');
+        const registerbtn = document.getElementById('registerbtn');
+        const loginbtn = document.getElementById('loginbtn');
+        const resetSection = document.getElementById('resetSection');
+        const newpassword= document.getElementById('newpassword');
+        const resetbtn = document.getElementById('resetbtn');
+
+        registerbtn.onclick = () => {
+            localStorage.setItem('username', myusername.value);
+            localStorage.setItem('password', mypassword.value);
+            resetSection.style.display = "none";
+            
+        };
+
+        loginbtn.onclick = () => {
+            
+            let savedusername = localStorage.getItem('username');
+            let savedpassword = localStorage.getItem('password');
+
+            if (myusername.value === savedusername && mypassword.value === savedpassword) {
+                console.log("Login successful");
+                resetSection.style.display = "none";
+            }
+            else if(myusername.value === savedusername && mypassword.value !== savedpassword){
+                console.log("Login failed")
+                resetSection.style.display = "block";
+            } 
+            else {
+                resetSection.style.display = "none";
+            }
+            }
+             resetbtn.onclick = () => {
+            let savedusername = localStorage.getItem('username');
+            if (myusername.value === savedusername) {
+                localStorage.setItem('password', newpassword.value);
+                console.log("Login successful")
+                resetSection.style.display = "none";
+            } else {
+        }
+    };
+    </script>
+</body>
+</html>

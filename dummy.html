@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <img src="WhatsApp Image 2025-09-23 at 12.56.54_664cf683.jpg" id="img1" style="width:200px">
+    <button type="button" onclick="document.getElementById('img1').src='v.jpg'">
+    change
+    </button> -->
+
+    <button id="btn">click me</button>
+    <h1>click event example</h1>
+    <div id="para">
+        <p>mmmmmmmmmmmmmmmmooooooooooooooooooouuuuuuuuunnnnnnnnniiiiiiikkkkkkkkkkkkaaaaaaaaaa</p>
+    </div>
+    <script>
+        let btn1=document.getElementById('btn');
+        function btn_click(){
+            document.body.style.background='blue';
+            document.body.style.color='white';
+            console.log('button submitted');
+        }
+        btn1.addEventListener('click',btn_click);
+        let para1=document.getElementById('para')
+        para1.addEventListener('mouseover',()=>{
+            para1.style.background='grey';
+            para.style.fontsize='2em';
+        })
+        para1.addEventListener('mouseout',()=>{
+            para1.style.backgroundColor='white';
+            para1.style.fontSize='1em';
+            para1.style.color='red';
+        })
+    </script>
+</body>
+</html>

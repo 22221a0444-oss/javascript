@@ -1,0 +1,59 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="username" placeholder="Enter username">
+    <input type="text" id="password" placeholder="Enter password">
+    <button type="button" id="registerbtn">Register</button>
+    <button type="button" id="loginbtn">Login</button>
+    <script>
+        const myusername=document.getElementById('username')
+        const mypassword=document.getElementById('password')
+        const registerbtn=document.getElementById('registerbtn')
+        const loginbtn=document.getElementById('loginbtn')
+        registerbtn.onClick=()=>{localStorage.setItem('username',myusername.value)
+            localStorage.setItem('password',mypassword.value)
+        }
+        let savedusername=localStorage.getItem('username')
+        let savedpassword=localStorage.getItem('password')
+        loginbtn.onClick=() => {
+            if (savedusername ==='Mounika' && savedpassword==='4444') {
+                console.log("login successful")
+            }
+            else{
+                cosole.log("login failed")
+            }
+        }
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Register Example</title>
+</head>
+<body>
+    <input type="text" class="myname" placeholder="Enter name">
+    <button class="submitBtn">Button</button>
+</body>
+<script>
+    const myname=document.getElementsByClassName("myname")[0];
+    const submitBtn=document.getElementsByClassName("submitbtn")[0];
+    submitBtn.onclick = () => {
+        console.log('name enterd:',myname.value);
+        localStorage.setItem('studentname',myname.value);
+        const savedname = localStorage.getItem('studentname');
+        console.log('savedname',savedname);
+            }
+</script>
+</html> -->
+
+
+

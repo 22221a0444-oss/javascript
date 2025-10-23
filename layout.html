@@ -1,0 +1,212 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mounika</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      background: #158fc4;
+      padding: 10px;
+      border-radius: 15px;
+      /* max-width: 900px; */
+      transition: all 0.5s ease;
+      height: 800px;
+      width: 800px;
+    }
+
+    .container img {
+      width: 500px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .text {
+      max-width: 400px;
+    }
+
+    .buttons {
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #898789;
+      color: rgb(10, 200, 200);
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: blanchedalmond;
+      color: rgb(23, 134, 151);
+    }
+
+    .layout1 {
+      flex-direction: row;
+    }
+
+    .layout2 {
+      flex-direction: row-reverse; 
+    }
+  </style>
+</head>
+<body>
+
+  
+  <div class="container layout1" id="layout">
+    <img src="v.jpg" alt="Sample Image">
+    <div class="text">
+      <h2>The Creator</h2>
+      <p>The lord krishna.</p>
+      <p>We are the devotees.</p>
+      <p>He gives the way for his devotees.</p>
+    </div>
+  </div>
+
+  
+  <div class="buttons">
+    <button id="layout one">Layout 1</button>
+    <button id="layout two">Layout 2</button>
+  </div>
+
+  
+  <script>
+    const container = document.getElementById('layout');
+    const btn1 = document.getElementById('layout one');
+    const btn2 = document.getElementById('layout two');
+
+    btn1.addEventListener('click', () => {
+      container.classList.remove('layout2');
+      container.classList.add('layout1');
+    });
+
+    btn2.addEventListener('click', () => {
+      container.classList.remove('layout1');
+      container.classList.add('layout2');
+    });
+  </script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centered Layout</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ecdddd;
+      color: rgb(14, 8, 8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; 
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center; /* Centers content inside container */
+      gap: 20px;
+      background: #cd7d7d;
+      color: rgb(19, 17, 17);
+      padding: 20px;
+      border-radius: 15px;
+      max-width: 700px;
+      transition: all 0.5s ease;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .container img {
+      width: 250px;
+      border-radius: 10px;
+    }
+
+    .text {
+      max-width: 350px;
+      text-align: center;
+    }
+
+    .buttons {
+      margin-top: 25px;
+    }
+
+    button {
+      margin: 5px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      font-size: 16px;
+      padding: 8px 15px;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    
+    .layout1 { flex-direction: row; text-align: left; }
+    .layout2 { flex-direction: row-reverse; text-align: left; }
+    .layout3 {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .layout3 img {
+      width: 80%;
+      max-width: 400px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Layout</h1>
+
+  <div class="container layout3" id="layout"> <!-- Default is centered layout -->
+    <img src="v.jpg" id="mainImg" alt="Nature">
+    <div class="text">
+      <h2>picture</h2>
+      <p>The creator.</p>
+      <p>lord krishna.</p>
+      <p>He gives the way for his devotees.</p>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button onclick="document.getElementById('layout').className='container layout1'">Layout 1</button>
+    <button onclick="document.getElementById('layout').className='container layout2'">Layout 2</button>
+  </div>
+
+</body>
+</html>
